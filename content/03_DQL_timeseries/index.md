@@ -47,15 +47,15 @@ timeseries avg(dt.host.cpu.usage), by:{dt.entity.host}
 
 ### Exercise 2
 
-Using the timeseries command create a chart that displays container cpu usage percent filtered by containers containing the name [PLACEHOLDER]
+Using the timeseries command create a chart that displays container cpu usage percent filtered by containers containing the name `cartservice`
 
-[Image Needed]
+![cartservice](../../assets/images/cartservice.png)
 
 <H3><details>
     <summary>Click to Expand Solution</summary>
 
 ```
-timeseries avg(dt.containers.cpu.usage_percent), by:{Container}, filter: in(Container, "[container_name]")
+timeseries avg(dt.containers.cpu.usage_percent), by:{Container}, filter: in(Container, "cartservice")
 ```
 
 </H3></details>
