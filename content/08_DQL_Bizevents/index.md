@@ -1,4 +1,4 @@
-## Hands-On Exercise 3 - Querying Entities
+## Hands-On Exercise 3 - Querying Business Events
 
 In this section, you will practice querying business events with DQL in a Notebook.
 
@@ -29,8 +29,8 @@ Three business events have been preconfigured in this environment for the EasyTr
 
 </H4></details>
 
-
-
+<br>
+<br>
 
 ---
 
@@ -61,6 +61,9 @@ One of the business events, _com.easytrade.deposit-money_, represents a user usi
 </H4></details>
 
 
+<br>
+<br>
+
 ---
 
 
@@ -88,9 +91,3 @@ There are many ways the Summarize command can be used to manipulate the captured
 ![Bizevent Exercise 3 Solution](../../assets/images/bizevent_solution_3.png)
 
 </H4></details>
-
-
----
-
-
-### Step 4: TBD

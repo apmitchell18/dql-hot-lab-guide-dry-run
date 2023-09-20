@@ -1,4 +1,4 @@
-## Hands-On Exercise 3 - Entity Queries in Practice
+## Hands-On Exercise 4 - Entity Queries in Practice
 
 In this section, you will work through a practical use case using entity queries in DQL. The familiar Dynatrace entity model is available directly in DQL queries, giving you direct access to entity relationships and properties. 
 
@@ -29,13 +29,13 @@ fetch dt.entity.process_group_instance
 ---
 
 ### Step 2: Add additional context information regarding these applications
-As you can see, that simple query is giving us the list of potentially affected processes by a known vulnerability. With this we can start adding context information, for example which is the host the application is running on.
+As you can see, that simple query is giving us the list of potentially affected processes by a known vulnerability. With this we can start adding contextual information, such as which hosts the applicaiton processes are running on.
 
 #### Update the query to add information about the underlying host.
 
 ![Added host](../../assets/images/NET3_5_wHost.png)
 
-(**Hint**: You can use the **belongs_to** field that provides the underlying host information. In order to display the ID, you will need to process the contents of this field. Check out [String functions](https://www.dynatrace.com/support/help/platform/grail/dynatrace-query-language/functions#dql-string-functions), in this case **toString** and **substring**)
+(**Hint**: You can use the **belongs_to** entity relationship field that provides the underlying host information. In order to display the ID, you will need to process the contents of this field. Check out [String functions](https://www.dynatrace.com/support/help/platform/grail/dynatrace-query-language/functions#dql-string-functions), in this case **toString** and **substring**)
 
 <H4><details>
 <summary>Click to Expand Solution</summary>
@@ -55,7 +55,7 @@ fetch dt.entity.process_group_instance
 ---
 
 ### Step 3: Add the underlying host name
-Now that we extracted the underlying host ID, we can use this information to look up the host name.
+Now that we have extracted the underlying host entity ID, we can use this information to look up the host display name.
 
 #### Update the query to add the underlying host name.
 
@@ -85,7 +85,7 @@ fetch dt.entity.process_group_instance
 
 ## Additional Exercise
 
-Even though the previous example is very useful, it is a very specific and not dynamic enough as we are hardcoding the technology we are looking for into our query. Wouldn’t it be way better to have a curated list of technologies discovered in our environment and select the one we are interested at instead of having to manually hardcode it? 
+Even though the previous example is very useful, it is a very specific, and dynamic applicable because we are hardcoding the technology we are looking for into our query. Wouldn’t it be way better to have a curated list of technologies discovered in our environment and select the one we are interested at instead of having to manually hardcode it? 
 
 We can take this example one step further. Using dashboards, some creative queries and variables, we can have the same view with the difference that it can now be dynamically filtered based on the selected discovered technology.
 

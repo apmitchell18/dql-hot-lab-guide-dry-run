@@ -1,16 +1,5 @@
 ## Hands-On Exercise 1 - DQL Optimization
 
-The consumption model for both logs and events on DPS is based on three dimensions:​
-
-- Ingest & Process, per gibibyte (GiB)​
-- Retain: per gibibyte-day (GiB-day)​
-- **Query: per gibibyte scanned (GiB scanned)​**
-
-Query data usage occurs during any execution of a query:
-- On the Logs & Events page
-- On a Dashboard
-- In a Notebook
-
 With the introduction of Grail and DQL, it's important to pay attention to the quality of the queries you and your customer write.  <u>Customers, and you as their trusted advisor, should be consious of how DQL queries affect their consumption. </u>
 
 To help with this, Dynatrace stores data on query executions in Grail, accessible via the **dt.system.query_executions** data object.
@@ -23,7 +12,7 @@ In this hands-on exercise, you will practice writing a cost-tracking query you c
 
 To understand what fields are available in a query_executions record, you can start by querying a sample of the data.  
 
-_**Note**: A limit should be used as query_executions is a large dataset and we are only looking for a sample._
+_**Note**: A limit should be used as query\_executions is a large dataset and we are only looking for a sample._
 
 **Run the following query and review the results:**
 ```
@@ -72,7 +61,7 @@ fetch dt.system.query_executions
 <br>
 
 
-_**Note:** query_executions does not provide a scanned GB metric, but you can return this value by converting from bytes using a mathematical operation._
+_**Note:** query\_executions does not provide a scanned GB metric, but you can return this value by converting from bytes using a mathematical operation._
 
 <br>
 
